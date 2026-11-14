@@ -1,0 +1,37 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 设置 Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: 护栏单元测试
+        run: |
+          python tests/test_guardrails.py
+
+      - name: 单个工具可调用
+        run: |
+          python src/tools.py search_policy '{"query":"农机补贴","top_k":3}'
+
+      - name: 端到端链路（mock）
+        run: |
+          python -m src.main "农机补贴对持仓的影响"

@@ -1,5 +1,7 @@
 # ETF 政策研究 Agent
 
+[![tests](https://github.com/ChinaLyn/etf-research-agent/actions/workflows/tests.yml/badge.svg)](https://github.com/ChinaLyn/etf-research-agent/actions/workflows/tests.yml)
+
 一个**面向 ETF 政策研究的垂直 AI Agent**：把「找政策 → 映射到 ETF → 看持仓 → 回测 → 出报告」这条研究闭环，
 拆成五个可被编排器调用的研究工具，每个工具的结果都带 `evidence_id`，最终回答必须过输出护栏。
 
