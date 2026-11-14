@@ -95,6 +95,11 @@ _REGISTRY = {
 }
 
 
+def available() -> list[str]:
+    """已注册的 tool_id，供编排器和一致性测试使用。"""
+    return sorted(_REGISTRY)
+
+
 def invoke(tool_id: str, args_json: str) -> dict:
     if tool_id not in _REGISTRY:
         return {"error": f"未知工具 {tool_id}，可用: {sorted(_REGISTRY)}"}

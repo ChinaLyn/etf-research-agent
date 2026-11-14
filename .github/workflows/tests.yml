@@ -24,9 +24,13 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: 护栏单元测试
+      - name: 安装测试依赖
         run: |
-          python tests/test_guardrails.py
+          python -m pip install --quiet pytest
+
+      - name: 单元测试
+        run: |
+          python -m pytest -q tests
 
       - name: 单个工具可调用
         run: |

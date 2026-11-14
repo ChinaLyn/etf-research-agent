@@ -36,9 +36,36 @@ python src/tools.py search_policy '{"query":"农机补贴","top_k":3}'
 # 2) 跑一遍完整链路（问题 → 选工具 → 取证据 → 过护栏）
 python -m src.main "农机补贴对持仓的影响"
 
-# 3) 护栏单元测试
-python tests/test_guardrails.py
+# 3) 看每一步的决策和观察（ReAct 的 trace）
+python -m src.main --trace "农机补贴对持仓的影响"
+
+# 4) 单元测试
+python -m pytest -q tests
 ```
+
+## 大模型推理（可选）
+
+编排器默认用规则推进。配置了模型之后，ReAct 里的 Reason 一步交给大模型：
+
+```bash
+export LLM_BASE_URL=https://api.deepseek.com    # 任意 OpenAI 兼容端点
+export LLM_API_KEY=sk-...
+export LLM_MODEL=deepseek-chat
+
+python -m src.main --trace "农机补贴对持仓的影响"
+```
+
+每一轮把「问题 + 已执行步骤的观察结果」一起交给模型，模型只回一个 JSON：
+
+```json
+{"thought": "政策已拿到，但还不知道落到哪些 ETF", "action": "map_event_to_etf", "args": {"event_id": "ev_001"}}
+```
+
+解析失败、超时或返回了不存在的工具，就自动回退到规则，链路不会断。
+没有 Key 时整条链路照样能跑，这也是 CI 里跑的那条路径。
+
+关键不在「用了哪个模型」，而在**观察有没有回到下一轮的决策里**：
+`run_steps` 每步都把结果追加进 `history`，下一次 `decide` 能看到它。
 
 ## 接入真实数据源
 
@@ -56,6 +83,7 @@ python tests/test_guardrails.py
 - **不补造机制**：抽不出传导链时记「直接作用」。
 - **不过闸门降级**：生成不合规时降级为证据包，不强行成文。
 - **按需读文档**：`catalog.md` 选工具 → `tools/<id>.md` 拿参数口径 → 调用。
+- **观察回流**：每一步的结果都进 `history`，下一步的决策基于它，而不是重复同一个调用。
 
 ## License
 
