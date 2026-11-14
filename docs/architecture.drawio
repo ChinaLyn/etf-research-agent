@@ -1,122 +1,98 @@
 <mxfile host="app.diagrams.net" agent="drawio-skill" version="24.7.17" type="device">
   <diagram id="etf-agent-arch" name="架构">
-    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="8" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1110" pageHeight="920" math="0" shadow="0">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="8" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1440" pageHeight="1066" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="q" value="&lt;b&gt;用户问题&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#5A6B7B&quot;&gt;python -m src.main &amp;quot;问题&amp;quot;&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#F5F7FA;strokeColor=#9AA7B4;" vertex="1" parent="1">
-          <mxGeometry x="356" y="130" width="320" height="52" as="geometry" />
+        <mxCell id="sl" value="&lt;b&gt;策略层&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#F2F2F2&quot;&gt;配套主系统&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=21;fontColor=#FFFFFF;fontFamily=Microsoft YaHei;fillColor=#6E56CF;strokeColor=#5A45B0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="180" height="96" as="geometry" />
         </mxCell>
-        <mxCell id="orch" value="&lt;b&gt;编排器（ReAct 循环）&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#33475B&quot;&gt;每步：Reason → Act → Observe，结果回到下一步&lt;br&gt;配了 LLM_API_KEY 用大模型，没有则回退规则&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
-          <mxGeometry x="296" y="214" width="440" height="76" as="geometry" />
+        <mxCell id="sp" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Microsoft YaHei;fillColor=#F1ECFE;strokeColor=#C9BEF5;" vertex="1" parent="1">
+          <mxGeometry x="220" y="40" width="1180" height="96" as="geometry" />
         </mxCell>
-        <mxCell id="cat" value="&lt;b&gt;catalog.md&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#5A6B7B&quot;&gt;语义目录：用户怎么问 → tool_id&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#FFFFFF;strokeColor=#6C8EBF;dashed=1;" vertex="1" parent="1">
-          <mxGeometry x="794" y="222" width="196" height="60" as="geometry" />
+        <mxCell id="strat" value="事件消融 · 因子与组合 · 样本外验证 · 轮动信号" style="rounded=0;whiteSpace=wrap;html=1;fontSize=18;fontColor=#3B2E63;fontFamily=Microsoft YaHei;fillColor=none;strokeColor=none;" vertex="1" parent="sp">
+          <mxGeometry x="0" y="0" width="1180" height="96" as="geometry" />
         </mxCell>
-        <mxCell id="t1" value="&lt;b&gt;search_policy&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#33475B&quot;&gt;政策检索&lt;br&gt;带原文引用&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
-          <mxGeometry x="24" y="338" width="184" height="72" as="geometry" />
+        <mxCell id="ol" value="&lt;b&gt;编排层&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#F2F2F2&quot;&gt;Agent 核心&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=21;fontColor=#FFFFFF;fontFamily=Microsoft YaHei;fillColor=#9C2B2B;strokeColor=#7F2222;" vertex="1" parent="1">
+          <mxGeometry x="40" y="176" width="180" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="t2" value="&lt;b&gt;map_event_to_etf&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#33475B&quot;&gt;事件 → 机制&lt;br&gt;→ 影响对象 → ETF&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
-          <mxGeometry x="224" y="338" width="184" height="72" as="geometry" />
+        <mxCell id="op" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Microsoft YaHei;fillColor=#FBEDED;strokeColor=#E0B4B4;" vertex="1" parent="1">
+          <mxGeometry x="220" y="176" width="1180" height="190" as="geometry" />
         </mxCell>
-        <mxCell id="t3" value="&lt;b&gt;analyze_overlap&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#33475B&quot;&gt;持仓穿透&lt;br&gt;两两重叠度&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
-          <mxGeometry x="424" y="338" width="184" height="72" as="geometry" />
+        <mxCell id="q" value="&lt;b&gt;用户问题&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11.5px;color:#44566B&quot;&gt;自然语言提问&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=15;fontColor=#16222E;fontFamily=Microsoft YaHei;fillColor=#FFFFFF;strokeColor=#9AA7B4;" vertex="1" parent="op">
+          <mxGeometry x="38" y="64" width="180" height="58" as="geometry" />
         </mxCell>
-        <mxCell id="t4" value="&lt;b&gt;run_event_study&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#33475B&quot;&gt;事件研究&lt;br&gt;t0+5/20 超额&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
-          <mxGeometry x="624" y="338" width="184" height="72" as="geometry" />
+        <mxCell id="orch" value="&lt;b&gt;编排器 · ReAct 循环&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:12px;color:#44566B&quot;&gt;Reason → Act → Observe，结果回到下一步&lt;br&gt;按需调用下方五个工具&lt;br&gt;配 LLM_API_KEY 用大模型，否则回退规则&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=16;fontColor=#16222E;fontFamily=Microsoft YaHei;fillColor=#FFFFFF;strokeColor=#9C2B2B;" vertex="1" parent="op">
+          <mxGeometry x="280" y="38" width="420" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="t5" value="&lt;b&gt;compose_report&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#33475B&quot;&gt;证据优先报告&lt;br&gt;（异步）&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
-          <mxGeometry x="824" y="338" width="184" height="72" as="geometry" />
+        <mxCell id="cat" value="&lt;b&gt;catalog.md&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11.5px;color:#44566B&quot;&gt;语义目录：问法 → tool_id&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=15;fontColor=#16222E;fontFamily=Microsoft YaHei;fillColor=#FFFFFF;strokeColor=#9C2B2B;" vertex="1" parent="op">
+          <mxGeometry x="780" y="64" width="240" height="58" as="geometry" />
         </mxCell>
-        <mxCell id="dsb" value="&lt;font style=&quot;font-size:12px;color:#5A6B7B&quot;&gt;数据源层 · 可插拔（当前全部为 mock，无真实凭证）&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#FAFAFA;strokeColor=#B3B3B3;align=center;verticalAlign=top;spacingTop=6;" vertex="1" parent="1">
-          <mxGeometry x="24" y="454" width="984" height="92" as="geometry" />
-        </mxCell>
-        <mxCell id="d1" value="&lt;b&gt;华泰柏瑞 skill&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;基金 / 指数 / ETF 事实&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#F5F5F5;strokeColor=#9E9E9E;" vertex="1" parent="dsb">
-          <mxGeometry x="24" y="32" width="296" height="48" as="geometry" />
-        </mxCell>
-        <mxCell id="d2" value="&lt;b&gt;Tushare · AkShare&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;行情与资金流&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#F5F5F5;strokeColor=#9E9E9E;" vertex="1" parent="dsb">
-          <mxGeometry x="340" y="32" width="296" height="48" as="geometry" />
-        </mxCell>
-        <mxCell id="d3" value="&lt;b&gt;本地 policy.db&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;政策原文 + 传导链 + 持仓&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#F5F5F5;strokeColor=#9E9E9E;" vertex="1" parent="dsb">
-          <mxGeometry x="656" y="32" width="304" height="48" as="geometry" />
-        </mxCell>
-        <mxCell id="ev" value="&lt;b&gt;证据链&lt;/b&gt;　每个工具返回 &lt;code&gt;evidence_id&lt;/code&gt;，没有证据的结果不得进入结论" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#FFF2CC;strokeColor=#D6B656;" vertex="1" parent="1">
-          <mxGeometry x="24" y="586" width="984" height="46" as="geometry" />
-        </mxCell>
-        <mxCell id="guard" value="&lt;b&gt;输出护栏（4 道闸门）&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#33475B&quot;&gt;结论先至 · 禁用语 · 无效值 · 证据必填&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#E1D5E7;strokeColor=#9673A6;" vertex="1" parent="1">
-          <mxGeometry x="256" y="666" width="520" height="78" as="geometry" />
-        </mxCell>
-        <mxCell id="ok" value="&lt;b&gt;合规报告&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;附免责尾注&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
-          <mxGeometry x="200" y="780" width="280" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="deg" value="&lt;b&gt;降级为证据包&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;交人工核验，不强行成文&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=13;fontColor=#1A2733;fontFamily=Microsoft YaHei;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="1">
-          <mxGeometry x="552" y="780" width="280" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=1.2;strokeColor=#7F8C99;" edge="1" parent="1" source="q" target="orch">
+        <mxCell id="eq" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.2;strokeColor=#8C6A6A;" edge="1" parent="1" source="q" target="orch">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e2" value="按需读" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeColor=#6C8EBF;fontColor=#3F6C9E;fontSize=11;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="cat" target="orch">
+        <mxCell id="ec" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;endArrow=open;strokeColor=#9C2B2B;fontColor=#7F2222;fontSize=11;labelBackgroundColor=#FBEDED;" edge="1" parent="1" source="cat" target="orch">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_t1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=1.2;strokeColor=#7F8C99;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="orch" target="t1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="tl" value="&lt;b&gt;工具层&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#F2F2F2&quot;&gt;五个工具&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=21;fontColor=#FFFFFF;fontFamily=Microsoft YaHei;fillColor=#3F6F52;strokeColor=#31573F;" vertex="1" parent="1">
+          <mxGeometry x="40" y="406" width="180" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="e_t2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=1.2;strokeColor=#7F8C99;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="orch" target="t2">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="tp" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Microsoft YaHei;fillColor=#EAF3EE;strokeColor=#BCD9C7;" vertex="1" parent="1">
+          <mxGeometry x="220" y="406" width="1180" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="e_t3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=1.2;strokeColor=#7F8C99;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="orch" target="t3">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="t1" value="&lt;b&gt;search_policy&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11.5px;color:#44566B&quot;&gt;政策检索 · 原文引用&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=14;fontColor=#16222E;fontFamily=Microsoft YaHei;fillColor=#FFFFFF;strokeColor=#3F6F52;" vertex="1" parent="tp">
+          <mxGeometry x="24" y="36" width="214" height="78" as="geometry" />
         </mxCell>
-        <mxCell id="e_t4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=1.2;strokeColor=#7F8C99;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="orch" target="t4">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="t2" value="&lt;b&gt;map_event_to_etf&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11.5px;color:#44566B&quot;&gt;事件 → 机制 → ETF&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=14;fontColor=#16222E;fontFamily=Microsoft YaHei;fillColor=#FFFFFF;strokeColor=#3F6F52;" vertex="1" parent="tp">
+          <mxGeometry x="253" y="36" width="214" height="78" as="geometry" />
         </mxCell>
-        <mxCell id="e_t5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=1.2;strokeColor=#7F8C99;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="orch" target="t5">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="t3" value="&lt;b&gt;analyze_overlap&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11.5px;color:#44566B&quot;&gt;持仓穿透 · 两两重叠&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=14;fontColor=#16222E;fontFamily=Microsoft YaHei;fillColor=#FFFFFF;strokeColor=#3F6F52;" vertex="1" parent="tp">
+          <mxGeometry x="482" y="36" width="214" height="78" as="geometry" />
         </mxCell>
-        <mxCell id="d_t1" style="edgeStyle=none;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=#A0AAB4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.0935;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t1" target="dsb">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="t4" value="&lt;b&gt;run_event_study&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11.5px;color:#44566B&quot;&gt;事件回测 · t0+5/20&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=14;fontColor=#16222E;fontFamily=Microsoft YaHei;fillColor=#FFFFFF;strokeColor=#3F6F52;" vertex="1" parent="tp">
+          <mxGeometry x="711" y="36" width="214" height="78" as="geometry" />
         </mxCell>
-        <mxCell id="d_t2" style="edgeStyle=none;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=#A0AAB4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.2967;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t2" target="dsb">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="t5" value="&lt;b&gt;compose_report&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11.5px;color:#44566B&quot;&gt;证据优先报告&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=14;fontColor=#16222E;fontFamily=Microsoft YaHei;fillColor=#FFFFFF;strokeColor=#3F6F52;" vertex="1" parent="tp">
+          <mxGeometry x="940" y="36" width="214" height="78" as="geometry" />
         </mxCell>
-        <mxCell id="d_t3" style="edgeStyle=none;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=#A0AAB4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t3" target="dsb">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="dl" value="&lt;b&gt;数据源层&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#F2F2F2&quot;&gt;可插拔 · 当前 mock&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=21;fontColor=#FFFFFF;fontFamily=Microsoft YaHei;fillColor=#2C5F8A;strokeColor=#234C6E;" vertex="1" parent="1">
+          <mxGeometry x="40" y="596" width="180" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="d_t4" style="edgeStyle=none;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=#A0AAB4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.7033;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t4" target="dsb">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="dp" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Microsoft YaHei;fillColor=#E9F2F8;strokeColor=#B7CFE0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="596" width="1180" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="d_t5" style="edgeStyle=none;html=1;endArrow=block;endFill=1;strokeWidth=1;strokeColor=#A0AAB4;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.9065;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="t5" target="dsb">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="d1" value="&lt;b&gt;华泰柏瑞 skill&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11.5px;color:#44566B&quot;&gt;基金 / 指数 / ETF 事实&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=14;fontColor=#16222E;fontFamily=Microsoft YaHei;fillColor=#FFFFFF;strokeColor=#2C5F8A;" vertex="1" parent="dp">
+          <mxGeometry x="24" y="36" width="356" height="78" as="geometry" />
         </mxCell>
-        <mxCell id="e5" value="返回结果 + evidence_id" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=1.2;strokeColor=#7F8C99;" edge="1" parent="1" source="dsb" target="ev">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="d2" value="&lt;b&gt;Tushare · AkShare&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11.5px;color:#44566B&quot;&gt;行情与资金流&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=14;fontColor=#16222E;fontFamily=Microsoft YaHei;fillColor=#FFFFFF;strokeColor=#2C5F8A;" vertex="1" parent="dp">
+          <mxGeometry x="412" y="36" width="356" height="78" as="geometry" />
         </mxCell>
-        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=1.2;strokeColor=#7F8C99;" edge="1" parent="1" source="ev" target="guard">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="d3" value="&lt;b&gt;本地 policy.db&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11.5px;color:#44566B&quot;&gt;政策原文 · 传导链 · 持仓&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=14;fontColor=#16222E;fontFamily=Microsoft YaHei;fillColor=#FFFFFF;strokeColor=#2C5F8A;" vertex="1" parent="dp">
+          <mxGeometry x="800" y="36" width="356" height="78" as="geometry" />
         </mxCell>
-        <mxCell id="e7" value="通过" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=1.2;strokeColor=#7F8C99;" edge="1" parent="1" source="guard" target="ok">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="fl" value="&lt;b&gt;证据与出闸&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#F2F2F2&quot;&gt;不可跳过&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=21;fontColor=#FFFFFF;fontFamily=Microsoft YaHei;fillColor=#A9741A;strokeColor=#8A5E12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="786" width="180" height="240" as="geometry" />
         </mxCell>
-        <mxCell id="e8" value="不通过" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;endFill=1;strokeWidth=1.2;strokeColor=#7F8C99;" edge="1" parent="1" source="guard" target="deg">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="fp" value="" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Microsoft YaHei;fillColor=#FDF6E7;strokeColor=#E6CFA0;" vertex="1" parent="1">
+          <mxGeometry x="220" y="786" width="1180" height="240" as="geometry" />
         </mxCell>
-        <mxCell id="strat" value="&lt;b&gt;策略层&lt;/b&gt;　事件消融 · 因子与组合 · 样本外验证 · 轮动信号" style="rounded=1;whiteSpace=wrap;html=1;fontSize=14;fontColor=#3D2C5A;fontFamily=Microsoft YaHei;fillColor=#EDE7F6;strokeColor=#7E57C2;align=center;verticalAlign=middle;spacingLeft=8;" vertex="1" parent="1">
-          <mxGeometry x="24" y="24" width="976" height="68" as="geometry" />
+        <mxCell id="ev" value="&lt;b&gt;证据链&lt;/b&gt;　每个工具返回 &lt;code&gt;evidence_id&lt;/code&gt;，没有证据的结果不得进入结论" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;fontSize=13.5;fontColor=#4A3A15;fontFamily=Microsoft YaHei;fillColor=#FBEFD2;strokeColor=#D9B96A;" vertex="1" parent="fp">
+          <mxGeometry x="24" y="22" width="1132" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="strat_tag" value="已实现" style="rounded=1;whiteSpace=wrap;html=1;fontSize=11;fontColor=#2E5E2E;fontFamily=Microsoft YaHei;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="strat">
-          <mxGeometry x="882" y="23" width="72" height="22" as="geometry" />
+        <mxCell id="guard" value="&lt;b&gt;输出护栏 · 4 道闸门&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11.5px;color:#44566B&quot;&gt;结论先至 · 禁用语 · 无效值 · 证据必填&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=15;fontColor=#16222E;fontFamily=Microsoft YaHei;fillColor=#FFFFFF;strokeColor=#A9741A;" vertex="1" parent="fp">
+          <mxGeometry x="24" y="102" width="430" height="84" as="geometry" />
         </mxCell>
-        <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;dashed=1;endArrow=block;endFill=1;strokeWidth=1.2;strokeColor=#7E57C2;fontColor=#5E35B1;fontSize=11;fontFamily=Microsoft YaHei;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="ok" target="strat">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="340" y="880" />
-              <mxPoint x="1075" y="880" />
-              <mxPoint x="1075" y="58" />
-            </Array>
-          </mxGeometry>
+        <mxCell id="ok" value="&lt;b&gt;合规报告&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#44566B&quot;&gt;附免责尾注&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=14;fontColor=#16222E;fontFamily=Microsoft YaHei;fillColor=#EFF7F1;strokeColor=#3F6F52;" vertex="1" parent="fp">
+          <mxGeometry x="580" y="94" width="300" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="e9_tag" value="研究结论 → 策略层" style="text;html=1;align=right;verticalAlign=middle;fontSize=11;fontColor=#5E35B1;fontFamily=Microsoft YaHei;" vertex="1" parent="1">
-          <mxGeometry x="816" y="700" width="244" height="24" as="geometry" />
+        <mxCell id="deg" value="&lt;b&gt;降级为证据包&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px;color:#44566B&quot;&gt;交人工核验，不强行成文&lt;/font&gt;" style="rounded=1;arcSize=12;whiteSpace=wrap;html=1;fontSize=14;fontColor=#16222E;fontFamily=Microsoft YaHei;fillColor=#FFF6E8;strokeColor=#A9741A;" vertex="1" parent="fp">
+          <mxGeometry x="580" y="166" width="300" height="52" as="geometry" />
+        </mxCell>
+        <mxCell id="eok" value="通过" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.2;strokeColor=#8C7A4A;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;fontColor=#6B5A2E;labelBackgroundColor=#FDF6E7;" edge="1" parent="1" source="guard" target="ok">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="-6" y="-12" as="offset" /></mxGeometry>
+        </mxCell>
+        <mxCell id="edeg" value="不通过" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=1.2;strokeColor=#8C7A4A;exitX=1;exitY=0.72;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;fontColor=#6B5A2E;labelBackgroundColor=#FDF6E7;" edge="1" parent="1" source="guard" target="deg">
+          <mxGeometry relative="1" as="geometry"><mxPoint x="-14" y="10" as="offset" /></mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
