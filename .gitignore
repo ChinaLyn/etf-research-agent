@@ -1,0 +1,23 @@
+# 凭据与密钥（绝不入库）
+.env
+*.env
+.htbr/
+credentials.json
+config.local.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 本地数据与产物
+data/
+reports/
+*.db
+*.sqlite*
+
+# 系统与编辑器
+.DS_Store
+.idea/
+.vscode/

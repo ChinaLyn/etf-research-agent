@@ -1,0 +1,23 @@
+{
+  "data_sources": {
+    "htbr": {
+      "base_url": "PLACEHOLDER_HTBR_BASE_URL",
+      "api_key_env": "HTBR_API_KEY"
+    },
+    "policy_db": {
+      "path": "data/policy.db"
+    },
+    "market": {
+      "provider": "mock",
+      "token_env": "TUSHARE_TOKEN"
+    }
+  },
+  "models": {
+    "llm": {
+      "provider": "openai-compatible",
+      "base_url_env": "LLM_BASE_URL",
+      "api_key_env": "LLM_API_KEY",
+      "model_env": "LLM_MODEL"
+    }
+  }
+}
